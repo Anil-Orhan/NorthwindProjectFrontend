@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <li
+    (click)="setCurrentCategory(c)"
+    *ngFor="let c of categories"
+    [class]="getCurrentCategoryClass(c)"
+  >
+    {{ c.categoryName }}
+  </li>
+</ul>
+<h5 *ngIf="currentCategory">{{ currentCategory.categoryName }} Seçtiniz</h5>
