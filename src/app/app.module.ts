@@ -13,6 +13,7 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import { ToastrModule } from 'ngx-toastr';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
     NaviComponent,
     VatAddedPipe,
     FilterPipePipe,
+    CartSummaryComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,10 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
+      maxOpened: 5,
+      timeOut: 1500,
+      closeButton: true,
+      easeTime: 1000,
     }),
     BrowserAnimationsModule,
   ],

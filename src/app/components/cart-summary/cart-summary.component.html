@@ -1,0 +1,41 @@
+<button *ngIf="cartItems.length > 0" class="nav-item dropdown position-relative">
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        {{cartItems.length}}
+        <span class="visually-hidden">unread messages</span>
+    </span>
+
+    <i class="fa-solid fa-cart-shopping text-center text-dark  fs-2  " data-bs-toggle="dropdown" aria-expanded="false">
+
+    </i>
+    <ul class="dropdown-menu p-3" aria-labelledby="navbarDropdown">
+        <li class="row dropdown-item" *ngFor="let cartItem of cartItems">
+
+            <i class="col-10 ">
+                <a>
+                    <i> {{cartItem.product.productName}}</i>
+                    <span class="badge bg-danger mx-1">{{cartItem.quantity}}</span>
+                </a>
+            </i>
+            <i class="col-2 "> <span class=" btn btn-warning " style="height:2em"
+                    (click)="removeFromCart(cartItem.product)">Sil</span>
+
+            </i>
+
+
+        </li>
+
+        <li>
+            <hr class="dropdown-divider" />
+        </li>
+        <li class="text-center">
+            <button class=" btn btn-warning  my-1 w-75">Go to Cart</button>
+        </li>
+        <li class="text-center">
+            <button class=" btn btn-danger my-1 w-75 " (click)="removeAllCart()">Sepeti
+                Boşalt</button>
+        </li>
+
+
+    </ul>
+
+</button>
